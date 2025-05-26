@@ -1,3 +1,3 @@
-import BlogEditor from './Editor';
+import InitializedMDXEditor from './InitializedMDXEditor';
 
-export default BlogEditor;
+export default InitializedMDXEditor;

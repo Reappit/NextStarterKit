@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "type": "module",
   "private": false,
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
     "lint": "eslint . --max-warnings 0"
   },
-  "packageManager": "pnpm@10.4.1",
+  "exports": {
+    "./*": "./src/index.ts",
+    "./styles.css": "./node_modules/@mdxeditor/editor/dist/style.css"
+  },
   "dependencies": {
+    "@mdxeditor/editor": "3.32.3",
+    "@tailwindcss/typography": "^0.5.16",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "@mdxeditor/editor": "3.32.3",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -21,8 +26,5 @@
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "typescript": "catalog:"
-  },
-  "exports": {
-    "./*": "./src/index.ts"
   }
 }
