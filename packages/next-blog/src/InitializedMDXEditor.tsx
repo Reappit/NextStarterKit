@@ -17,10 +17,8 @@ import {
   linkPlugin,
   tablePlugin,
   toolbarPlugin,
-  MDXEditorMethods,
 } from '@mdxeditor/editor';
 import EditorToolbar from '@/src/EditorToolbar';
-import { ForwardedRef } from 'react';
 
 const editorPlugins = () => [
   toolbarPlugin({

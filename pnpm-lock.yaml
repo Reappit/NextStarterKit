@@ -103,7 +103,7 @@ importers:
         specifier: 'catalog:'
         version: 19.0.0
       '@workspace/eslint-config':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/eslint-config
       '@workspace/typescript-config':
         specifier: workspace:*
@@ -159,6 +159,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16
+      '@workspace/ui':
+        specifier: workspace:*
+        version: link:../ui
       lucide-react:
         specifier: 'catalog:'
         version: 0.475.0(react@19.1.0)
