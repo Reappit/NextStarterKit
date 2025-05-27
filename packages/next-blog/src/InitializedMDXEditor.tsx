@@ -1,7 +1,5 @@
 'use client';
 
-import type { ForwardedRef } from 'react';
-
 import {
   headingsPlugin,
   listsPlugin,
@@ -9,20 +7,20 @@ import {
   thematicBreakPlugin,
   markdownShortcutPlugin,
   MDXEditor,
-  type MDXEditorMethods,
   type MDXEditorProps,
   AdmonitionDirectiveDescriptor,
   codeBlockPlugin,
   codeMirrorPlugin,
   directivesPlugin,
   frontmatterPlugin,
-  imagePlugin,
   linkDialogPlugin,
   linkPlugin,
   tablePlugin,
   toolbarPlugin,
+  MDXEditorMethods,
 } from '@mdxeditor/editor';
 import EditorToolbar from '@/src/EditorToolbar';
+import { ForwardedRef } from 'react';
 
 const editorPlugins = () => [
   toolbarPlugin({
@@ -54,17 +52,12 @@ const editorPlugins = () => [
   frontmatterPlugin(),
 ];
 
-function InitializedMDXEditor({
-  editorRef,
-  ...props
-}: { editorRef: ForwardedRef<MDXEditorMethods> | null } & MDXEditorProps) {
+function InitializedMDXEditor(props: MDXEditorProps) {
   return (
     <MDXEditor
-      plugins={[...editorPlugins()]}
+      plugins={editorPlugins()}
       {...props}
-      ref={editorRef}
       contentEditableClassName="prose"
-      className="editor-root mt-[1.19em] w-full"
     />
   );
 }

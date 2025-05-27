@@ -1,3 +1,5 @@
 import InitializedMDXEditor from './InitializedMDXEditor';
 
-export default InitializedMDXEditor;
+import Editor from './Editor';
+
+export { Editor, InitializedMDXEditor };
