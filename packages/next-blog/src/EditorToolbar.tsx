@@ -1,7 +1,6 @@
 import {
   BlockTypeSelect,
   BoldItalicUnderlineToggles,
-  Button,
   ChangeAdmonitionType,
   ChangeCodeMirrorLanguage,
   CodeToggle,
@@ -18,7 +17,6 @@ import {
   ShowSandpackInfo,
   type DirectiveNode,
 } from '@mdxeditor/editor';
-// import { SaveIcon } from 'lucide-react';
 
 function whenInAdmonition(editorInFocus: EditorInFocus | null) {
   const node = editorInFocus?.rootNode;
@@ -46,15 +44,6 @@ export default function EditorToolbar({ onSave }: { onSave: () => void }) {
         {
           fallback: () => (
             <>
-              <Button
-                onClick={event => {
-                  event.preventDefault();
-                  onSave();
-                }}
-              >
-                {/*<SaveIcon strokeWidth={1.5} />*/}
-                save icon!!!
-              </Button>
               <BoldItalicUnderlineToggles />
               <CodeToggle />
               <Separator />

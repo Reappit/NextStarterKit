@@ -26,11 +26,11 @@ const EditorComp = dynamic(() => import('./InitializedMDXEditor'), {
 function Editor() {
   const [content, setContent] = useState('');
   return (
-    <div className="">
+    <div className="mx-auto max-w-6xl space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <FileText className="h-6 w-6" />
-          <h1 className="text-4xl font-bold">Markdown Editor</h1>
+          <h1 className="text-2xl font-bold">Markdown Editor</h1>
         </div>
         <Button onClick={() => {}} className="flex items-center gap-2">
           <Save className="h-20 w-20" />
@@ -58,12 +58,19 @@ function Editor() {
             </TabsList>
 
             <TabsContent value="edit" className="mt-4">
-              <EditorComp markdown={''} />
-              <div className="text-muted-foreground mt-2 text-sm">
-                {content.length} characters,{' '}
-                {content.split(/\s+/).filter(word => word.length > 0).length}{' '}
-                words
-              </div>
+              <Card>
+                <CardContent>
+                  <EditorComp markdown={''} />
+                  <div className="text-muted-foreground mt-2 text-sm">
+                    {content.length} characters,{' '}
+                    {
+                      content.split(/\s+/).filter(word => word.length > 0)
+                        .length
+                    }{' '}
+                    words
+                  </div>
+                </CardContent>
+              </Card>
             </TabsContent>
 
             <TabsContent value="preview" className="mt-4">
