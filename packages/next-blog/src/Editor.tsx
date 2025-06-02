@@ -3,8 +3,10 @@
 import dynamic from 'next/dynamic';
 import '../node_modules/@mdxeditor/editor/dist/style.css';
 import './editor.css';
+import { Form, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -20,22 +22,26 @@ import {
 import { AlertCircle, Edit3, Eye, FileText, Save } from 'lucide-react';
 import { Button } from '@workspace/ui/components/button';
 import { Input } from '@workspace/ui/components/input';
-import { Label } from '@workspace/ui/components/label';
-import {
-  getCharacterCountColor,
-  SeoData,
-  seoLimits,
-  ValidationErrors,
-} from '@/src/utils/slug-validators';
+
 import { Badge } from '@workspace/ui/components/badge';
 import { Textarea } from '@workspace/ui/components/textarea';
 import { Separator } from '@workspace/ui/components/separator';
 import { Alert, AlertDescription } from '@workspace/ui/components/alert';
 import { z } from 'zod';
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/form';
+import { CharacterCount } from './components/CharacterCount';
+import GoogleSearchPreview from './components/GoogleSearchPreview';
 
-const EditorComp = dynamic(() => import('./InitializedMDXEditor'), {
-  ssr: false,
-});
+// const EditorComp = dynamic(() => import('./InitializedMDXEditor'), {
+//   ssr: false,
+// });
 
 const formSchema = z.object({
   title: z
@@ -83,236 +89,358 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-
 function Editor() {
-  const [content, setContent] = useState('');
-  const seoData = {
-    title: '',
-    description: '',
-    keywords: '',
-    author: '',
-    slug: '',
-    ogTitle: '',
-    ogDescription: '',
-    ogImage: '',
-    canonicalUrl: '',
+  const [activeTab, setActiveTab] = useState('edit');
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      title: '',
+      description: '',
+      keywords: '',
+      author: '',
+      slug: '',
+      ogTitle: '',
+      ogDescription: '',
+      ogImage: '',
+      canonicalUrl: '',
+      content: '',
+    },
+    mode: 'onChange',
+  });
+
+  const {
+    watch,
+    setValue,
+    formState: { errors, isValid },
+  } = form;
+
+  // Watch form values for real-time updates
+  const watchedValues = watch();
+
+  // Generate slug from title
+  const generateSlug = (title: string) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
   };
-  const errors = [];
+
+  // Auto-generate slug when title changes
+  useEffect(() => {
+    if (watchedValues.title && !watchedValues.slug) {
+      const slug = generateSlug(watchedValues.title);
+      setValue('slug', slug);
+    }
+  }, [watchedValues.title, watchedValues.slug, setValue]);
+
+  // Auto-populate OG fields
+  useEffect(() => {
+    if (watchedValues.title && !watchedValues.ogTitle) {
+      setValue('ogTitle', watchedValues.title);
+    }
+  }, [watchedValues.title, watchedValues.ogTitle, setValue]);
+
+  useEffect(() => {
+    if (watchedValues.description && !watchedValues.ogDescription) {
+      setValue('ogDescription', watchedValues.description);
+    }
+  }, [watchedValues.description, watchedValues.ogDescription, setValue]);
+
+  const renderMarkdown = (markdown: string) => {
+    return markdown
+      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+      .replace(/\*(.*)\*/gim, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]$$([^)]+)$$/gim, '<a href="$2">$1</a>')
+      .replace(/\n/gim, '<br>');
+  };
+
+  const onSubmit = (data: FormData) => {
+    console.log('Form submitted:', data);
+    // Handle form submission
+  };
+
+  const getSEOScore = () => {
+    const hasRequiredFields =
+      watchedValues.title && watchedValues.description && watchedValues.slug;
+    const hasOptimalLength =
+      watchedValues.title.length >= 30 &&
+      watchedValues.title.length <= 55 &&
+      watchedValues.description.length >= 120 &&
+      watchedValues.description.length <= 155;
+    const hasNoErrors = Object.keys(errors).length === 0;
+
+    if (hasRequiredFields && hasOptimalLength && hasNoErrors)
+      return 'Excellent';
+    if (hasRequiredFields && hasNoErrors) return 'Good';
+    if (hasRequiredFields) return 'Fair';
+    return 'Needs improvement';
+  };
+
   return (
     <div className="mx-auto max-w-6xl space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <FileText className="h-6 w-6" />
-          <h1 className="text-2xl font-bold">Content Editor</h1>
+          <h1 className="text-2xl font-bold">Markdown Editor</h1>
         </div>
-        <Button onClick={() => {}} className="flex items-center gap-2">
-          <Save className="h-20 w-20" />
-          Save Slug
-        </Button>
+        <div className="flex items-center gap-2">
+          <Badge variant={isValid ? 'default' : 'destructive'}>
+            {isValid ? 'Valid' : 'Invalid'}
+          </Badge>
+          <Button
+            onClick={form.handleSubmit(onSubmit)}
+            className="flex items-center gap-2"
+          >
+            <Save className="h-4 w-4" />
+            Save Article
+          </Button>
+        </div>
       </div>
-      <Tabs defaultValue="edit" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="base" className="flex items-center gap-2">
-            <Eye className="h-4 w-4" />
-          </TabsTrigger>
-          <TabsTrigger value="edit" className="flex items-center gap-2">
-            <Edit3 className="h-4 w-4" />
-            Editor
-          </TabsTrigger>
 
-          <TabsTrigger value="preview" className="flex items-center gap-2">
-            <Eye className="h-4 w-4" />
-            Preview
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="base" className="mt-4">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          {/* SEO Fields */}
           <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <AlertCircle className="h-5 w-5" />
+                SEO Optimization
+              </CardTitle>
+            </CardHeader>
             <CardContent className="space-y-4">
               {/* Title */}
-              <div className="space-y-2">
-                <Label htmlFor="title">Title *</Label>
-                <Input
-                  id="title"
-                  value={seoData.title}
-                  onChange={e => {}}
-                  placeholder="Enter article title"
-                  className={errors.title ? 'border-red-500' : ''}
-                />
-                <div className="flex items-center justify-between text-sm">
-                  <span
-                    className={getCharacterCountColor(
-                      'title',
-                      seoData.title.length
-                    )}
-                  >
-                    {seoData.title.length}/{seoLimits.title.max}
-                  </span>
-                  <Badge
-                    variant={
-                      seoData.title.length >= seoLimits.title.min &&
-                      seoData.title.length <= seoLimits.title.optimal
-                        ? 'default'
-                        : 'secondary'
-                    }
-                  >
-                    {seoData.title.length >= seoLimits.title.min &&
-                    seoData.title.length <= seoLimits.title.optimal
-                      ? 'Optimal'
-                      : 'Needs work'}
-                  </Badge>
-                </div>
-                {errors.title && (
-                  <p className="text-sm text-red-500">{errors.title}</p>
+              <FormField
+                control={form.control}
+                name="title"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Title *</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter article title" {...field} />
+                    </FormControl>
+                    <div className="space-y-1">
+                      <CharacterCount
+                        current={field.value.length}
+                        min={30}
+                        max={60}
+                        optimal={55}
+                      />
+                      <FormDescription>
+                        Optimal length: 30-55 characters. This appears as the
+                        clickable headline in search results.
+                      </FormDescription>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
                 )}
-              </div>
+              />
 
               {/* Meta Description */}
-              <div className="space-y-2">
-                <Label htmlFor="description">Meta Description *</Label>
-                <Textarea
-                  id="description"
-                  value={seoData.description}
-                  onChange={e => {}}
-                  placeholder="Enter meta description"
-                  rows={3}
-                  className={errors.description ? 'border-red-500' : ''}
-                />
-                <div className="flex items-center justify-between text-sm">
-                  <span
-                    className={getCharacterCountColor(
-                      'description',
-                      seoData.description.length
-                    )}
-                  >
-                    {seoData.description.length}/{seoLimits.description.max}
-                  </span>
-                  <Badge
-                    variant={
-                      seoData.description.length >= seoLimits.description.min &&
-                      seoData.description.length <=
-                        seoLimits.description.optimal
-                        ? 'default'
-                        : 'secondary'
-                    }
-                  >
-                    {seoData.description.length >= seoLimits.description.min &&
-                    seoData.description.length <= seoLimits.description.optimal
-                      ? 'Optimal'
-                      : 'Needs work'}
-                  </Badge>
-                </div>
-                {errors.description && (
-                  <p className="text-sm text-red-500">{errors.description}</p>
+              <FormField
+                control={form.control}
+                name="description"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Meta Description *</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Enter meta description"
+                        rows={3}
+                        {...field}
+                      />
+                    </FormControl>
+                    <div className="space-y-1">
+                      <CharacterCount
+                        current={field.value.length}
+                        min={120}
+                        max={160}
+                        optimal={155}
+                      />
+                      <FormDescription>
+                        Optimal length: 120-155 characters. This appears below
+                        the title in search results.
+                      </FormDescription>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
                 )}
-              </div>
+              />
 
               {/* URL Slug */}
-              <div className="space-y-2">
-                <Label htmlFor="slug">URL Slug *</Label>
-                <Input
-                  id="slug"
-                  value={seoData.slug}
-                  onChange={e => {}}
-                  placeholder="url-slug"
-                  className={errors.slug ? 'border-red-500' : ''}
-                />
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">
-                    {seoData.slug.length}/{seoLimits.slug.max}
-                  </span>
-                  <Button variant="outline" size="sm" onClick={() => {}}>
-                    Generate
-                  </Button>
-                </div>
-                {errors.slug && (
-                  <p className="text-sm text-red-500">{errors.slug}</p>
+              <FormField
+                control={form.control}
+                name="slug"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>URL Slug *</FormLabel>
+                    <FormControl>
+                      <div className="flex gap-2">
+                        <Input placeholder="url-slug" {...field} />
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          onClick={() =>
+                            setValue('slug', generateSlug(watchedValues.title))
+                          }
+                        >
+                          Generate
+                        </Button>
+                      </div>
+                    </FormControl>
+                    <div className="space-y-1">
+                      <CharacterCount current={field.value.length} max={75} />
+                      <FormDescription>
+                        URL-friendly version of your title. Use lowercase
+                        letters, numbers, and hyphens only.
+                      </FormDescription>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
                 )}
-              </div>
+              />
 
               <Separator />
 
               {/* Additional SEO Fields */}
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="keywords">Keywords</Label>
-                  <Input
-                    id="keywords"
-                    value={seoData.keywords}
-                    onChange={e => {}}
-                    placeholder="keyword1, keyword2, keyword3"
-                  />
-                </div>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="keywords"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Keywords</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="keyword1, keyword2, keyword3"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Comma-separated keywords relevant to your content.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-                <div className="space-y-2">
-                  <Label htmlFor="author">Author</Label>
-                  <Input
-                    id="author"
-                    value={seoData.author}
-                    onChange={e => {}}
-                    placeholder="Author name"
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="author"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Author</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Author name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-                <div className="space-y-2">
-                  <Label htmlFor="canonicalUrl">Canonical URL</Label>
-                  <Input
-                    id="canonicalUrl"
-                    value={seoData.canonicalUrl}
-                    onChange={e => {}}
-                    placeholder="https://example.com/article"
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="canonicalUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Canonical URL</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="https://example.com/article"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        The preferred URL for this content to avoid duplicate
+                        content issues.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
 
               <Separator />
 
               {/* Open Graph Fields */}
               <div className="space-y-4">
-                <h4 className="font-medium">Open Graph</h4>
+                <h4 className="font-medium">Open Graph (Social Media)</h4>
 
-                <div className="space-y-2">
-                  <Label htmlFor="ogTitle">OG Title</Label>
-                  <Input
-                    id="ogTitle"
-                    value={seoData.ogTitle}
-                    onChange={e => {}}
-                    placeholder="Open Graph title"
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <FormField
+                    control={form.control}
+                    name="ogTitle"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>OG Title</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Open Graph title" {...field} />
+                        </FormControl>
+                        <FormDescription>
+                          Title for social media shares (auto-filled from main
+                          title).
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="ogImage"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>OG Image URL</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="https://example.com/image.jpg"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormDescription>
+                          Image that appears when shared on social media.
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="ogDescription">OG Description</Label>
-                  <Textarea
-                    id="ogDescription"
-                    value={seoData.ogDescription}
-                    onChange={e => {}}
-                    placeholder="Open Graph description"
-                    rows={2}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="ogImage">OG Image URL</Label>
-                  <Input
-                    id="ogImage"
-                    value={seoData.ogImage}
-                    onChange={e => {}}
-                    placeholder="https://example.com/image.jpg"
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="ogDescription"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>OG Description</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Open Graph description"
+                          rows={2}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Description for social media shares (auto-filled from
+                        meta description).
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
 
               {/* SEO Score */}
               <Alert>
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
-                  SEO Score:{' '}
-                  {Object.keys(errors).length === 0 &&
-                  seoData.title &&
-                  seoData.description
-                    ? 'Good'
-                    : 'Needs improvement'}
+                  SEO Score: <strong>{getSEOScore()}</strong>
+                  {!isValid && ' - Please fix validation errors above.'}
                 </AlertDescription>
               </Alert>
 
@@ -322,38 +450,113 @@ function Editor() {
                   <Eye className="h-4 w-4" />
                   Google Search Preview
                 </h4>
-                {/*<GoogleSearchPreview title={seoData.title} description={seoData.description} slug={seoData.slug} />*/}
+                <GoogleSearchPreview
+                  title={watchedValues.title}
+                  description={watchedValues.description}
+                  slug={watchedValues.slug}
+                />
                 <p className="text-muted-foreground text-xs">
                   This is how your article will appear in Google search results
                 </p>
               </div>
             </CardContent>
           </Card>
-        </TabsContent>
 
-        <TabsContent value="edit" className="mt-4">
-          <Card className="py-0">
-            <CardContent className="px-0">
-              <EditorComp markdown={''} />
-              <div className="text-muted-foreground mt-2 px-6 text-sm">
-                {content.length} characters,{' '}
-                {content.split(/\s+/).filter(word => word.length > 0).length}{' '}
-                words
-              </div>
+          {/* Markdown Editor */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Edit3 className="h-5 w-5" />
+                Content Editor
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Tabs
+                value={activeTab}
+                onValueChange={setActiveTab}
+                className="w-full"
+              >
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="edit" className="flex items-center gap-2">
+                    <Edit3 className="h-4 w-4" />
+                    Edit
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="preview"
+                    className="flex items-center gap-2"
+                  >
+                    <Eye className="h-4 w-4" />
+                    Preview
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="edit" className="mt-4">
+                  <FormField
+                    control={form.control}
+                    name="content"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea
+                            placeholder="# Your Article Title
+
+Write your markdown content here...
+
+## Section 1
+
+This is a paragraph with **bold** and *italic* text.
+
+- List item 1
+- List item 2
+- List item 3
+
+[Link text](https://example.com)
+
+\`\`\`javascript
+const example = 'code block';
+\`\`\`"
+                            className="min-h-[500px] font-mono"
+                            {...field}
+                          />
+                        </FormControl>
+                        <div className="text-muted-foreground flex items-center justify-between text-sm">
+                          <span>
+                            {field.value.length} characters,{' '}
+                            {
+                              field.value
+                                .split(/\s+/)
+                                .filter(word => word.length > 0).length
+                            }{' '}
+                            words
+                          </span>
+                          <FormMessage />
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+                </TabsContent>
+
+                <TabsContent value="preview" className="mt-4">
+                  <div className="bg-background min-h-[500px] rounded-lg border p-4">
+                    {watchedValues.content ? (
+                      <div
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: renderMarkdown(watchedValues.content),
+                        }}
+                      />
+                    ) : (
+                      <p className="text-muted-foreground">
+                        No content to preview
+                      </p>
+                    )}
+                  </div>
+                </TabsContent>
+              </Tabs>
             </CardContent>
           </Card>
-        </TabsContent>
-
-        <TabsContent value="preview" className="mt-4">
-          <div className="bg-background min-h-[500px] rounded-lg border p-4">
-            {content ? (
-              <div className="prose prose-sm max-w-none" />
-            ) : (
-              <p className="text-muted-foreground">No content to preview</p>
-            )}
-          </div>
-        </TabsContent>
-      </Tabs>
+        </form>
+      </Form>
     </div>
   );
 }
