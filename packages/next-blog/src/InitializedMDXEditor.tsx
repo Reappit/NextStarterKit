@@ -16,14 +16,14 @@ import {
   linkDialogPlugin,
   linkPlugin,
   tablePlugin,
-  toolbarPlugin,
+  // toolbarPlugin,
 } from '@mdxeditor/editor';
-import EditorToolbar from '@/src/EditorToolbar';
+// import EditorToolbar from '@/src/EditorToolbar';
 
 const editorPlugins = () => [
-  toolbarPlugin({
-    toolbarContents: () => <EditorToolbar onSave={() => {}} />,
-  }),
+  // toolbarPlugin({
+  //   toolbarContents: () => <EditorToolbar onSave={() => {}} />,
+  // }),
   headingsPlugin({ allowedHeadingLevels: [1, 2, 3] }),
   quotePlugin(),
   listsPlugin(),
