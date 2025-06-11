@@ -1,0 +1,37 @@
+{
+  "name": "@workspace/security",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "packageManager": "pnpm@10.4.1",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "exports": {
+    "./*": "./src/index.ts"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "catalog:",
+    "@workspace/db": "workspace:*",
+    "@workspace/env": "workspace:*",
+    "better-auth": "^1.2.9",
+    "drizzle-orm": "^0.44.2",
+    "drizzle-zod": "^0.8.2",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "catalog:",
+    "uuid": "^11.1.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@turbo/gen": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@types/uuid": "^10.0.0",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

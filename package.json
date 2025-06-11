@@ -25,5 +25,8 @@
   "volta": {
     "node": "20.17.0",
     "pnpm": "10.4.1"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.8"
   }
 }

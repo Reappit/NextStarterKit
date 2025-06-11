@@ -1,0 +1,24 @@
+{
+  "name": "@workspace/env",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "packageManager": "pnpm@10.4.1",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "exports": {
+    "./*": "./src/index.ts"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@turbo/gen": "catalog:",
+    "@types/node": "catalog:",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
