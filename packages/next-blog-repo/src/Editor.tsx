@@ -2,7 +2,7 @@
 
 // import dynamic from 'next/dynamic';
 import '../node_modules/@mdxeditor/editor/dist/style.css';
-import './editor.css';
+// import './editor.css';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useState } from 'react';
@@ -115,7 +115,7 @@ const formSchema = z.object({
     .string()
     .max(20, 'Reading time must not exceed 20 characters')
     .optional(),
-  published: z.boolean().default(false),
+  published: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
