@@ -260,7 +260,7 @@ function Editor() {
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <FileText className="h-6 w-6" />
-            <h1 className="text-2xl font-bold">Story Editor</h1>
+            <h1 className="text-2xl font-bold">Slug Editor</h1>
           </div>
           <div className="flex items-center gap-4">
             <FormField
@@ -295,7 +295,7 @@ function Editor() {
               className="flex items-center gap-2"
             >
               <Save className="h-4 w-4" />
-              Save Story
+              Save Slug
             </Button>
           </div>
         </div>
@@ -305,7 +305,7 @@ function Editor() {
           <Alert className="mb-6 border-yellow-500 bg-yellow-50">
             <AlertCircle className="h-4 w-4 text-yellow-600" />
             <AlertDescription className="text-yellow-800">
-              <strong>Warning:</strong> This story is marked as published but
+              <strong>Warning:</strong> This slug is marked as published but
               contains validation errors. Please fix the issues below or
               unpublish the story to prevent publishing invalid content.
             </AlertDescription>
