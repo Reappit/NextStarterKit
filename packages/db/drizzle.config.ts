@@ -1,13 +1,13 @@
 import { type Config } from 'drizzle-kit';
 
-import env from '@workspace/env/*';
+// import env from '@workspace/env/*';
 
 export default {
-  schema: './schema.ts',
+  schema: './src/schema.ts',
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: ""
   },
   verbose: true,
   strict: true,
