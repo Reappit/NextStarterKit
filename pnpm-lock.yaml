@@ -125,87 +125,35 @@ importers:
         specifier: 'catalog:'
         version: 5.7.3
 
-  packages/admin-repo:
-    dependencies:
-      '@hookform/resolvers':
-        specifier: 'catalog:'
-        version: 5.0.1(react-hook-form@7.57.0(react@19.1.0))
-      '@workspace/db':
-        specifier: workspace:*
-        version: link:../db
-      '@workspace/env':
-        specifier: workspace:*
-        version: link:../env
-      better-auth:
-        specifier: ^1.2.9
-        version: 1.2.9
-      drizzle-orm:
-        specifier: ^0.44.2
-        version: 0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
-      drizzle-zod:
-        specifier: ^0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
-      next:
-        specifier: 'catalog:'
-        version: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      react:
-        specifier: 'catalog:'
-        version: 19.1.0
-      react-dom:
-        specifier: 'catalog:'
-        version: 19.1.0(react@19.1.0)
-      react-hook-form:
-        specifier: 'catalog:'
-        version: 7.57.0(react@19.1.0)
-      uuid:
-        specifier: ^11.1.0
-        version: 11.1.0
-      zod:
-        specifier: 'catalog:'
-        version: 3.25.48
-    devDependencies:
-      '@turbo/gen':
-        specifier: 'catalog:'
-        version: 2.5.3(@types/node@22.15.21)(typescript@5.7.3)
-      '@types/node':
-        specifier: 'catalog:'
-        version: 22.15.21
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.0.0
-      '@types/react-dom':
-        specifier: 'catalog:'
-        version: 19.0.0
-      '@types/uuid':
-        specifier: ^10.0.0
-        version: 10.0.0
-      '@workspace/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config-repo
-      '@workspace/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config-repo
-      typescript:
-        specifier: 'catalog:'
-        version: 5.7.3
-
   packages/common-repo:
     dependencies:
       '@hookform/resolvers':
         specifier: 'catalog:'
         version: 5.0.1(react-hook-form@7.57.0(react@19.1.0))
+      '@upstash/ratelimit':
+        specifier: ^2.0.5
+        version: 2.0.5(@upstash/redis@1.35.0)
+      '@upstash/redis':
+        specifier: ^1.35.0
+        version: 1.35.0
+      '@workspace/env':
+        specifier: workspace:*
+        version: link:../env
       better-auth:
-        specifier: ^1.2.9
+        specifier: 1.2.9
         version: 1.2.9
       drizzle-orm:
-        specifier: ^0.44.2
-        version: 0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
+        specifier: 0.44.2
+        version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       drizzle-zod:
-        specifier: ^0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+        specifier: 0.8.2
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
       next:
         specifier: 'catalog:'
         version: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next-safe-action:
+        specifier: 8.0.2
+        version: 8.0.2(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 'catalog:'
         version: 19.1.0
@@ -260,10 +208,10 @@ importers:
         version: link:../env
       drizzle-orm:
         specifier: 0.44.2
-        version: 0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
+        version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       drizzle-zod:
         specifier: 0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
       pg:
         specifier: 8.16.0
         version: 8.16.0
@@ -2127,6 +2075,18 @@ packages:
     resolution: {integrity: sha512-ar0tjQfObzhSaW3C3QNmTc5ofj0hDoNQ5XWrCy6zDyabdr0TWhCkClp+rywGNj/odAFBVzzJrK4tEq5M4Hmu4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@upstash/core-analytics@0.0.10':
+    resolution: {integrity: sha512-7qJHGxpQgQr9/vmeS1PktEwvNAF7TI4iJDi8Pu2CFZ9YUGHZH4fOP5TfYlZ4aVxfopnELiE4BS4FBjyK7V1/xQ==}
+    engines: {node: '>=16.0.0'}
+
+  '@upstash/ratelimit@2.0.5':
+    resolution: {integrity: sha512-1FRv0cs3ZlBjCNOCpCmKYmt9BYGIJf0J0R3pucOPE88R21rL7jNjXG+I+rN/BVOvYJhI9niRAS/JaSNjiSICxA==}
+    peerDependencies:
+      '@upstash/redis': ^1.34.3
+
+  '@upstash/redis@1.35.0':
+    resolution: {integrity: sha512-WUm0Jz1xN4DBDGeJIi2Y0kVsolWRB2tsVds4SExaiLg4wBdHFMB+8IfZtBWr+BP0FvhuBr5G1/VLrJ9xzIWHsg==}
+
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -3641,6 +3601,14 @@ packages:
   netmask@2.0.2:
     resolution: {integrity: sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==}
     engines: {node: '>= 0.4.0'}
+
+  next-safe-action@8.0.2:
+    resolution: {integrity: sha512-0xwxKRxDEbZryCtu5iiUEUKK+KOnrvH6HQMARj+HAFlsilcGUkD4thWT4WcFrb4we21yxmzwec0dMBzPS2SFWQ==}
+    engines: {node: '>=18.17'}
+    peerDependencies:
+      next: '>= 14.0.0'
+      react: '>= 18.2.0'
+      react-dom: '>= 18.2.0'
 
   next-themes@0.4.4:
     resolution: {integrity: sha512-LDQ2qIOJF0VnuVrrMSMLrWGjRMkq+0mpgl6e0juCLqdJ+oo8Q84JRWT6Wh11VDQKkMMe+dVzDKLWs5n87T+PkQ==}
@@ -6548,6 +6516,19 @@ snapshots:
       '@typescript-eslint/types': 8.32.1
       eslint-visitor-keys: 4.2.0
 
+  '@upstash/core-analytics@0.0.10':
+    dependencies:
+      '@upstash/redis': 1.35.0
+
+  '@upstash/ratelimit@2.0.5(@upstash/redis@1.35.0)':
+    dependencies:
+      '@upstash/core-analytics': 0.0.10
+      '@upstash/redis': 1.35.0
+
+  '@upstash/redis@1.35.0':
+    dependencies:
+      uncrypto: 0.1.3
+
   acorn-jsx@5.3.2(acorn@8.14.1):
     dependencies:
       acorn: 8.14.1
@@ -7019,15 +7000,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7):
+  drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7):
     optionalDependencies:
+      '@upstash/redis': 1.35.0
       kysely: 0.28.2
       pg: 8.16.0
       postgres: 3.4.7
 
-  drizzle-zod@0.8.2(drizzle-orm@0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48):
+  drizzle-zod@0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48):
     dependencies:
-      drizzle-orm: 0.44.2(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
+      drizzle-orm: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       zod: 3.25.48
 
   dunder-proto@1.0.1:
@@ -8431,6 +8413,12 @@ snapshots:
   neo-async@2.6.2: {}
 
   netmask@2.0.2: {}
+
+  next-safe-action@8.0.2(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      next: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   next-themes@0.4.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:

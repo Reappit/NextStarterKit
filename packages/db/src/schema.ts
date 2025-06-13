@@ -8,6 +8,8 @@ import {
 import { relations } from 'drizzle-orm/relations';
 import { userTable } from '@workspace/common-repo/db';
 
+
+// common-repo db schema
 export * from '@workspace/common-repo/db';
 
 export const feedbackTable = pgTable('feedback', {

@@ -36,8 +36,8 @@ export const env = createEnv({
     R2_BUCKET_NAME: z.string().min(1),
     IMAGE_BASE_URL: z.string().min(1),
     // OPEN_AI_API_KEY: z.string().min(1),
-    // UPSTASH_REDIS_REST_URL: z.string().min(1),
-    // UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
+    UPSTASH_REDIS_REST_URL: z.string().min(1),
+    UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
   },
   /*
    * Environment variables available on the client (and server).
@@ -73,8 +73,8 @@ export const env = createEnv({
     R2_BUCKET_NAME: process.env.R2_BUCKET_NAME,
     IMAGE_BASE_URL: process.env.NEXT_PUBLIC_IMAGE_BASE_URL,
     NEXT_PUBLIC_IMAGE_BASE_URL: process.env.NEXT_PUBLIC_IMAGE_BASE_URL,
-    // UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
-    // UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
+    UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
+    UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
     // NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
     // NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,

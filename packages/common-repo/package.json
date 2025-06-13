@@ -11,11 +11,15 @@
     "./*": "./src/index.ts"
   },
   "dependencies": {
+    "@workspace/env": "workspace:*",
     "@hookform/resolvers": "catalog:",
-    "better-auth": "^1.2.9",
-    "drizzle-orm": "^0.44.2",
-    "drizzle-zod": "^0.8.2",
+    "@upstash/ratelimit": "^2.0.5",
+    "@upstash/redis": "^1.35.0",
+    "better-auth": "1.2.9",
+    "drizzle-orm": "0.44.2",
+    "drizzle-zod": "0.8.2",
     "next": "catalog:",
+    "next-safe-action": "8.0.2",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-hook-form": "catalog:",
