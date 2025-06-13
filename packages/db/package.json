@@ -7,9 +7,9 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "db-push": "drizzle-kit push --config=drizzle.config.ts",
-    "db-migrate": "drizzle-kit migrate --config=drizzle.config.ts",
-    "db-generate": "drizzle-kit generate --config=drizzle.config.ts",
-    "db-studio": "drizzle-kit studio"
+    "db-migrate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit migrate --config=drizzle.config.ts",
+    "db-generate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit generate --config=drizzle.config.ts",
+    "db-studio": "SKIP_ENV_VALIDATION=TRUE drizzle-kit studio"
   },
   "exports": {
     "./*": "./src/index.ts"
