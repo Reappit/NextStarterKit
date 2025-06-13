@@ -5,7 +5,11 @@
   "private": false,
   "packageManager": "pnpm@10.4.1",
   "scripts": {
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "db-push": "drizzle-kit push --config=drizzle.config.ts",
+    "db-migrate": "drizzle-kit migrate --config=./src/drizzle.config.ts",
+    "db-generate": "drizzle-kit generate --config=./src/drizzle.config.ts",
+    "db-studio": "drizzle-kit studio"
   },
   "exports": {
     "./*": "./src/index.ts"
@@ -14,21 +18,22 @@
     "@hookform/resolvers": "catalog:",
     "@workspace/common-repo": "workspace:*",
     "@workspace/env": "workspace:*",
-    "drizzle-orm": "^0.44.2",
-    "drizzle-zod": "^0.8.2",
-    "uuid": "^11.1.0",
-    "zod": "catalog:",
+    "drizzle-orm": "0.44.2",
+    "drizzle-zod": "0.8.2",
     "pg": "8.16.0",
-    "postgres": "3.4.7"
+    "postgres": "3.4.7",
+    "uuid": "11.1.0",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "10.0.0",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "drizzle-kit": "0.31.1",
     "typescript": "catalog:"
   }
 }
