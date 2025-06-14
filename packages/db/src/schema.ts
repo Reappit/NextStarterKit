@@ -1,13 +1,7 @@
-import {
-  boolean,
-  timestamp,
-  pgTable,
-  text,
-  serial,
-} from 'drizzle-orm/pg-core';
+import { boolean, timestamp, pgTable, text, serial } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm/relations';
 import { userTable } from '@workspace/common-repo/db';
-
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
 
 // common-repo db schema
 export * from '@workspace/common-repo/db';
@@ -29,3 +23,6 @@ export const feedbackTableRelations = relations(feedbackTable, ({ one }) => ({
     references: [userTable.id],
   }),
 }));
+
+export const selectUserSchema = createSelectSchema(userTable);
+export const selectFeedbackSchema = createSelectSchema(feedbackTable);

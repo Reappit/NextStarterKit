@@ -1,0 +1,27 @@
+{
+  "name": "@workspace/services",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "packageManager": "pnpm@10.4.1",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "exports": {
+    "./*": "./src/index.ts"
+  },
+  "dependencies": {
+    "@workspace/common-repo": "workspace:*",
+    "@workspace/env": "workspace:*",
+    "@workspace/repository": "workspace:*",
+    "@workspace/dto": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@turbo/gen": "catalog:",
+    "@types/node": "catalog:",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

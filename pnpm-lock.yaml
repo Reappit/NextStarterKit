@@ -253,6 +253,31 @@ importers:
         specifier: 'catalog:'
         version: 5.7.3
 
+  packages/dto:
+    dependencies:
+      '@workspace/db':
+        specifier: workspace:*
+        version: link:../db
+      zod:
+        specifier: 'catalog:'
+        version: 3.25.48
+    devDependencies:
+      '@turbo/gen':
+        specifier: 'catalog:'
+        version: 2.5.3(@types/node@22.15.21)(typescript@5.7.3)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.15.21
+      '@workspace/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config-repo
+      '@workspace/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config-repo
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
+
   packages/env:
     dependencies:
       '@t3-oss/env-nextjs':
@@ -331,12 +356,6 @@ importers:
       '@workspace/ui':
         specifier: workspace:*
         version: link:../ui
-      drizzle-orm:
-        specifier: 0.44.2
-        version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
-      drizzle-zod:
-        specifier: 0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
       lucide-react:
         specifier: 'catalog:'
         version: 0.475.0(react@19.1.0)
@@ -368,6 +387,77 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.0.0
+      '@workspace/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config-repo
+      '@workspace/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config-repo
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
+
+  packages/repository:
+    dependencies:
+      '@workspace/common-repo':
+        specifier: workspace:*
+        version: link:../common-repo
+      '@workspace/db':
+        specifier: workspace:*
+        version: link:../db
+      '@workspace/env':
+        specifier: workspace:*
+        version: link:../env
+      drizzle-orm:
+        specifier: 0.44.2
+        version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
+      drizzle-zod:
+        specifier: 0.8.2
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+      zod:
+        specifier: 'catalog:'
+        version: 3.25.48
+    devDependencies:
+      '@turbo/gen':
+        specifier: 'catalog:'
+        version: 2.5.3(@types/node@22.15.21)(typescript@5.7.3)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.15.21
+      '@workspace/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config-repo
+      '@workspace/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config-repo
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
+
+  packages/services:
+    dependencies:
+      '@workspace/common-repo':
+        specifier: workspace:*
+        version: link:../common-repo
+      '@workspace/dto':
+        specifier: workspace:*
+        version: link:../dto
+      '@workspace/env':
+        specifier: workspace:*
+        version: link:../env
+      '@workspace/repository':
+        specifier: workspace:*
+        version: link:../repository
+      zod:
+        specifier: 'catalog:'
+        version: 3.25.48
+    devDependencies:
+      '@turbo/gen':
+        specifier: 'catalog:'
+        version: 2.5.3(@types/node@22.15.21)(typescript@5.7.3)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.15.21
       '@workspace/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
