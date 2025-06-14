@@ -10,4 +10,7 @@ export default {
   },
   verbose: true,
   strict: true,
+  entities: {
+    roles: true
+  }
 } satisfies Config;
