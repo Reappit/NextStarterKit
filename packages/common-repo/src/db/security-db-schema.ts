@@ -21,7 +21,7 @@ export const userTable = pgTable('user', {
   credits: integer('credits').notNull().default(0),
   createdAt: timestamp('created_at').notNull(),
   updatedAt: timestamp('updated_at').notNull(),
-});
+}).enableRLS();
 
 export const sessionTable = pgTable('session', {
   id: text('id').primaryKey(),
@@ -34,7 +34,7 @@ export const sessionTable = pgTable('session', {
   userId: text('user_id')
     .notNull()
     .references(() => userTable.id, { onDelete: 'cascade' }),
-});
+}).enableRLS();
 
 export const accountTable = pgTable('account', {
   id: text('id').primaryKey(),
@@ -52,7 +52,7 @@ export const accountTable = pgTable('account', {
   password: text('password'),
   createdAt: timestamp('created_at').notNull(),
   updatedAt: timestamp('updated_at').notNull(),
-});
+}).enableRLS();
 
 export const verificationTable = pgTable('verification', {
   id: text('id').primaryKey(),
@@ -61,4 +61,4 @@ export const verificationTable = pgTable('verification', {
   expiresAt: timestamp('expires_at').notNull(),
   createdAt: timestamp('created_at'),
   updatedAt: timestamp('updated_at'),
-});
+}).enableRLS();

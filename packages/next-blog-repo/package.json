@@ -12,16 +12,16 @@
     "./styles.css": "./node_modules/@mdxeditor/editor/dist/style.css"
   },
   "dependencies": {
-    "@workspace/ui": "workspace:*",
+    "@hookform/resolvers": "catalog:",
     "@mdxeditor/editor": "3.32.3",
     "@tailwindcss/typography": "^0.5.16",
+    "@workspace/ui": "workspace:*",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "zod": "catalog:",
     "react-hook-form": "catalog:",
-    "@hookform/resolvers": "catalog:"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@turbo/gen": "catalog:",

@@ -331,6 +331,12 @@ importers:
       '@workspace/ui':
         specifier: workspace:*
         version: link:../ui
+      drizzle-orm:
+        specifier: 0.44.2
+        version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
+      drizzle-zod:
+        specifier: 0.8.2
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
       lucide-react:
         specifier: 'catalog:'
         version: 0.475.0(react@19.1.0)
