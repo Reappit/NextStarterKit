@@ -46,8 +46,8 @@ catalogs:
       specifier: 5.7.3
       version: 5.7.3
     zod:
-      specifier: 3.25.56
-      version: 3.25.48
+      specifier: 3.25.64
+      version: 3.25.64
 
 importers:
 
@@ -55,7 +55,7 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
-        version: 0.13.8(typescript@5.7.3)(zod@3.25.48)
+        version: 0.13.8(typescript@5.7.3)(zod@3.25.64)
     devDependencies:
       '@workspace/eslint-config':
         specifier: workspace:*
@@ -147,7 +147,7 @@ importers:
         version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       drizzle-zod:
         specifier: 0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.64)
       next:
         specifier: 'catalog:'
         version: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -168,7 +168,7 @@ importers:
         version: 11.1.0
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -211,7 +211,7 @@ importers:
         version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       drizzle-zod:
         specifier: 0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.64)
       pg:
         specifier: 8.16.0
         version: 8.16.0
@@ -223,7 +223,7 @@ importers:
         version: 11.1.0
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -260,7 +260,7 @@ importers:
         version: link:../db
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -282,10 +282,10 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
-        version: 0.13.8(typescript@5.7.3)(zod@3.25.48)
+        version: 0.13.8(typescript@5.7.3)(zod@3.25.64)
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -373,7 +373,7 @@ importers:
         version: 7.57.0(react@19.1.0)
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -413,10 +413,10 @@ importers:
         version: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
       drizzle-zod:
         specifier: 0.8.2
-        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48)
+        version: 0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.64)
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -450,7 +450,7 @@ importers:
         version: link:../repository
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@turbo/gen':
         specifier: 'catalog:'
@@ -519,7 +519,7 @@ importers:
         version: 1.3.0
       zod:
         specifier: 'catalog:'
-        version: 3.25.48
+        version: 3.25.64
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.0.8
@@ -1082,85 +1082,72 @@ packages:
     resolution: {integrity: sha512-IVfGJa7gjChDET1dK9SekxFFdflarnUB8PwW8aGwEoF3oAsSDuNUTYS+SKDOyOJxQyDC1aPFMuRYLoDInyV9Ew==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-libvips-linux-arm@1.1.0':
     resolution: {integrity: sha512-s8BAd0lwUIvYCJyRdFqvsj+BJIpDBSxs6ivrOPm/R7piTs5UIwY5OjXrP2bqXC9/moGsyRa37eYWYCOGVXxVrA==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-libvips-linux-ppc64@1.1.0':
     resolution: {integrity: sha512-tiXxFZFbhnkWE2LA8oQj7KYR+bWBkiV2nilRldT7bqoEZ4HiDOcePr9wVDAZPi/Id5fT1oY9iGnDq20cwUz8lQ==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-libvips-linux-s390x@1.1.0':
     resolution: {integrity: sha512-xukSwvhguw7COyzvmjydRb3x/09+21HykyapcZchiCUkTThEQEOMtBj9UhkaBRLuBrgLFzQ2wbxdeCCJW/jgJA==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-libvips-linux-x64@1.1.0':
     resolution: {integrity: sha512-yRj2+reB8iMg9W5sULM3S74jVS7zqSzHG3Ol/twnAAkAhnGQnpjj6e4ayUz7V+FpKypwgs82xbRdYtchTTUB+Q==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-libvips-linuxmusl-arm64@1.1.0':
     resolution: {integrity: sha512-jYZdG+whg0MDK+q2COKbYidaqW/WTz0cc1E+tMAusiDygrM4ypmSCjOJPmFTvHHJ8j/6cAGyeDWZOsK06tP33w==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@img/sharp-libvips-linuxmusl-x64@1.1.0':
     resolution: {integrity: sha512-wK7SBdwrAiycjXdkPnGCPLjYb9lD4l6Ze2gSdAGVZrEL05AOUJESWU2lhlC+Ffn5/G+VKuSm6zzbQSzFX/P65A==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@img/sharp-linux-arm64@0.34.2':
     resolution: {integrity: sha512-D8n8wgWmPDakc83LORcfJepdOSN6MvWNzzz2ux0MnIbOqdieRZwVYY32zxVx+IFUT8er5KPcyU3XXsn+GzG/0Q==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-linux-arm@0.34.2':
     resolution: {integrity: sha512-0DZzkvuEOqQUP9mo2kjjKNok5AmnOr1jB2XYjkaoNRwpAYMDzRmAqUIa1nRi58S2WswqSfPOWLNOr0FDT3H5RQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-linux-s390x@0.34.2':
     resolution: {integrity: sha512-EGZ1xwhBI7dNISwxjChqBGELCWMGDvmxZXKjQRuqMrakhO8QoMgqCrdjnAqJq/CScxfRn+Bb7suXBElKQpPDiw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-linux-x64@0.34.2':
     resolution: {integrity: sha512-sD7J+h5nFLMMmOXYH4DD9UtSNBD05tWSSdWAcEyzqW8Cn5UxXvsHAxmxSesYUsTOBmUnjtxghKDl15EvfqLFbQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@img/sharp-linuxmusl-arm64@0.34.2':
     resolution: {integrity: sha512-NEE2vQ6wcxYav1/A22OOxoSOGiKnNmDzCYFOZ949xFmrWZOVII1Bp3NqVVpvj+3UeHMFyN5eP/V5hzViQ5CZNA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@img/sharp-linuxmusl-x64@0.34.2':
     resolution: {integrity: sha512-DOYMrDm5E6/8bm/yQLCWyuDJwUnlevR8xtF8bs+gjZ7cyUNYXiSf/E8Kp0Ss5xasIaXSHzb888V1BE4i1hFhAA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@img/sharp-wasm32@0.34.2':
     resolution: {integrity: sha512-/VI4mdlJ9zkaq53MbIG6rZY+QRN3MLbR6usYlgITEzi4Rpx5S6LFKsycOQjkOGmqTNmkIdLjEvooFKwww6OpdQ==}
@@ -1375,28 +1362,24 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@next/swc-linux-arm64-musl@15.3.3':
     resolution: {integrity: sha512-h6Y1fLU4RWAp1HPNJWDYBQ+e3G7sLckyBXhmH9ajn8l/RSMnhbuPBV/fXmy3muMcVwoJdHL+UtzRzs0nXOf9SA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@next/swc-linux-x64-gnu@15.3.3':
     resolution: {integrity: sha512-jJ8HRiF3N8Zw6hGlytCj5BiHyG/K+fnTKVDEKvUCyiQ/0r5tgwO7OgaRiOjjRoIx2vwLR+Rz8hQoPrnmFbJdfw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@next/swc-linux-x64-musl@15.3.3':
     resolution: {integrity: sha512-HrUcTr4N+RgiiGn3jjeT6Oo208UT/7BuTr7K0mdKRBtTbT4v9zJqCDKO97DUqqoBK1qyzP1RwvrWTvU6EPh/Cw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@next/swc-win32-arm64-msvc@15.3.3':
     resolution: {integrity: sha512-SxorONgi6K7ZUysMtRF3mIeHC5aA3IQLmKFQzU0OuhuUYwpOBc1ypaLJLP5Bf3M9k53KUUUj4vTPwzGvl/NwlQ==}
@@ -1977,28 +1960,24 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@tailwindcss/oxide-linux-arm64-musl@4.1.7':
     resolution: {integrity: sha512-PjGuNNmJeKHnP58M7XyjJyla8LPo+RmwHQpBI+W/OxqrwojyuCQ+GUtygu7jUqTEexejZHr/z3nBc/gTiXBj4A==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@tailwindcss/oxide-linux-x64-gnu@4.1.7':
     resolution: {integrity: sha512-HMs+Va+ZR3gC3mLZE00gXxtBo3JoSQxtu9lobbZd+DmfkIxR54NO7Z+UQNPsa0P/ITn1TevtFxXTpsRU7qEvWg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@tailwindcss/oxide-linux-x64-musl@4.1.7':
     resolution: {integrity: sha512-MHZ6jyNlutdHH8rd+YTdr3QbXrHXqwIhHw9e7yXEBcQdluGwhpQY2Eku8UZK6ReLaWtQ4gijIv5QoM5eE+qlsA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@tailwindcss/oxide-wasm32-wasi@4.1.7':
     resolution: {integrity: sha512-ANaSKt74ZRzE2TvJmUcbFQ8zS201cIPxUDm5qez5rLEwWkie2SkGtA4P+GPTj+u8N6JbPrC8MtY8RmJA35Oo+A==}
@@ -3383,28 +3362,24 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-arm64-musl@1.30.1:
     resolution: {integrity: sha512-jmUQVx4331m6LIX+0wUhBbmMX7TCfjF5FoOH6SD1CttzuYlGNVpA7QnrmLxrsub43ClTINfGSYyHe2HWeLl5CQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-linux-x64-gnu@1.30.1:
     resolution: {integrity: sha512-piWx3z4wN8J8z3+O5kO74+yr6ze/dKmPnI7vLqfSqI8bccaTGY5xiSGVIJBDd5K5BHlvVLpUB3S2YCfelyJ1bw==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-x64-musl@1.30.1:
     resolution: {integrity: sha512-rRomAK7eIkL+tHY0YPxbc5Dra2gXlI63HL+v1Pdi1a3sC+tJTcFrHX+E86sulgAXeI7rSzDYhPSeHHjqFhqfeQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-win32-arm64-msvc@1.30.1:
     resolution: {integrity: sha512-mSL4rqPi4iXq5YVqzSsJgMVFENoa4nGTT/GjO2c0Yl9OuQfPsIfncvLrEW6RbbB24WtZ3xP/2CCmI3tNkNV4oA==}
@@ -4676,8 +4651,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod@3.25.48:
-    resolution: {integrity: sha512-0X1mz8FtgEIvaxGjdIImYpZEaZMrund9pGXm3M6vM7Reba0e2eI71KPjSCGXBfwKDPwPoywf6waUKc3/tFvX2Q==}
+  zod@3.25.64:
+    resolution: {integrity: sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -6310,17 +6285,17 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.8(typescript@5.7.3)(zod@3.25.48)':
+  '@t3-oss/env-core@0.13.8(typescript@5.7.3)(zod@3.25.64)':
     optionalDependencies:
       typescript: 5.7.3
-      zod: 3.25.48
+      zod: 3.25.64
 
-  '@t3-oss/env-nextjs@0.13.8(typescript@5.7.3)(zod@3.25.48)':
+  '@t3-oss/env-nextjs@0.13.8(typescript@5.7.3)(zod@3.25.64)':
     dependencies:
-      '@t3-oss/env-core': 0.13.8(typescript@5.7.3)(zod@3.25.48)
+      '@t3-oss/env-core': 0.13.8(typescript@5.7.3)(zod@3.25.64)
     optionalDependencies:
       typescript: 5.7.3
-      zod: 3.25.48
+      zod: 3.25.64
 
   '@tailwindcss/node@4.1.7':
     dependencies:
@@ -6765,7 +6740,7 @@ snapshots:
       jose: 5.10.0
       kysely: 0.28.2
       nanostores: 0.11.4
-      zod: 3.25.48
+      zod: 3.25.64
 
   better-call@1.0.9:
     dependencies:
@@ -7103,10 +7078,10 @@ snapshots:
       pg: 8.16.0
       postgres: 3.4.7
 
-  drizzle-zod@0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.48):
+  drizzle-zod@0.8.2(drizzle-orm@0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7))(zod@3.25.64):
     dependencies:
       drizzle-orm: 0.44.2(@upstash/redis@1.35.0)(kysely@0.28.2)(pg@8.16.0)(postgres@3.4.7)
-      zod: 3.25.48
+      zod: 3.25.64
 
   dunder-proto@1.0.1:
     dependencies:
@@ -9579,6 +9554,6 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod@3.25.48: {}
+  zod@3.25.64: {}
 
   zwitch@2.0.4: {}
