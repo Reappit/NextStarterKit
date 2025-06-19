@@ -19,7 +19,7 @@ const slugRepository = {
     });
   },
 
-  getSlugById(id: number) {
+  getSlugById(id: string) {
     return db.query.slugTable.findFirst({
       where: eq(slugTable.id, id),
       with: {

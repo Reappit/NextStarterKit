@@ -1,23 +1,13 @@
 {
-  "name": "@workspace/db",
+  "name": "@workspace/common-db-repo",
   "version": "1.0.0",
   "type": "module",
   "private": false,
   "packageManager": "pnpm@10.4.1",
-  "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "db-push": "drizzle-kit push --config=drizzle.config.ts",
-    "db-migrate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit migrate --config=drizzle.config.ts",
-    "db-generate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit generate --config=drizzle.config.ts",
-    "db-studio": "SKIP_ENV_VALIDATION=TRUE drizzle-kit studio"
-  },
   "exports": {
     "./*": "./src/index.ts"
   },
   "dependencies": {
-    "@hookform/resolvers": "catalog:",
-    "@workspace/common-db-repo": "workspace:*",
-    "@workspace/env": "workspace:*",
     "drizzle-orm": "0.44.2",
     "drizzle-zod": "0.8.2",
     "pg": "8.16.0",
@@ -28,7 +18,7 @@
   "devDependencies": {
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
-    "@types/uuid": "10.0.0",
+    "@types/react": "catalog:",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "drizzle-kit": "0.31.1",

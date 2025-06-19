@@ -1,5 +1,5 @@
-import { getSession } from '@/security';
-import { ActionError } from '@/lib/exceptions';
+import { getSession } from '../security';
+import { ActionError } from './exceptions';
 
 export const AUTHENTICATION_ERROR_MESSAGE =
   'You must be logged in to view this content';

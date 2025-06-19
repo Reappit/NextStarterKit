@@ -1,0 +1,25 @@
+{
+  "name": "@workspace/actions",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "packageManager": "pnpm@10.4.1",
+  "exports": {
+    "./*": "./src/index.ts"
+  },
+  "dependencies": {
+    "@workspace/common-repo": "workspace:*",
+    "@workspace/services": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@turbo/gen": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "drizzle-kit": "0.31.1",
+    "typescript": "catalog:"
+  }
+}

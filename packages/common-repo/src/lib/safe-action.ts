@@ -4,9 +4,9 @@ import { createSafeActionClient } from 'next-safe-action';
 import { z } from 'zod';
 
 import env from '@workspace/env/*';
-import { ActionError } from '@/lib/exceptions';
-import { getIp } from '@/lib/get-ip';
-import { assertAuthenticated } from '@/lib/session';
+import { ActionError } from './exceptions';
+import { getIp } from './get-ip';
+import { assertAuthenticated } from './session';
 
 const redis = new Redis({
   url: env.UPSTASH_REDIS_REST_URL,
