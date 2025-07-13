@@ -1,7 +1,7 @@
 'use server';
 
-import { unauthenticatedAction } from '@reappit/common-repo/*';
-import { slugService } from '@reappit/services/*';
+import { unauthenticatedAction } from '@reappit/common/*';
+import { slugService } from '@/src/services/slug-service';
 
 export const getSlugById = unauthenticatedAction
   .metadata({

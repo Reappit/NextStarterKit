@@ -14,7 +14,6 @@
   "dependencies": {
     "@reappit/ui": "workspace:*",
     "@reappit/blog": "workspace:*",
-    "@reappit/actions": "workspace:*",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "next-themes": "0.4.4",

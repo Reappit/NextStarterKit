@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "catalog:",
-    "@reappit/common-db-repo": "workspace:*",
+    "@reappit/common-db": "workspace:*",
     "@reappit/env": "workspace:*",
     "drizzle-orm": "0.44.2",
     "drizzle-zod": "0.8.2",

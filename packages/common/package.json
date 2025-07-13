@@ -1,5 +1,5 @@
 {
-  "name": "@reappit/common-repo",
+  "name": "@reappit/common",
   "version": "1.0.0",
   "type": "module",
   "private": false,
