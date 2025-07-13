@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@reappit/ui": "workspace:*",
-    "@reappit/next-blog": "workspace:*",
+    "@reappit/blog": "workspace:*",
     "@reappit/actions": "workspace:*",
     "lucide-react": "catalog:",
     "next": "catalog:",

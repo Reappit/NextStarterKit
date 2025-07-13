@@ -1,6 +1,6 @@
 'use client';
 
-import { Editor } from '@reappit/next-blog/*';
+import { Editor } from '@reappit/blog/*';
 import { Suspense } from 'react';
 
 export default function EditorPage() {
