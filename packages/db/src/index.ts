@@ -7,7 +7,7 @@ import {
 } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 
-import env from '@workspace/env/*';
+import env from '@reappit/env/*';
 
 import * as schema from './schema';
 

@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/next-blog",
+  "name": "@reappit/next-blog",
   "version": "1.0.0",
   "type": "module",
   "private": false,
@@ -15,7 +15,7 @@
     "@hookform/resolvers": "catalog:",
     "@mdxeditor/editor": "3.32.3",
     "@tailwindcss/typography": "^0.5.16",
-    "@workspace/ui": "workspace:*",
+    "@reappit/ui": "workspace:*",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
@@ -28,8 +28,8 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }
 }

@@ -5,7 +5,7 @@ import {
   selectCategorySchema,
   selectSlugSchema,
   selectUserSchema,
-} from '@workspace/db/*';
+} from '@reappit/db/*';
 
 export const SlugDto = selectSlugSchema.extend({
   category: selectCategorySchema.optional(),

@@ -1,5 +1,5 @@
 import { type Config } from 'drizzle-kit';
-import env from '@workspace/env/*';
+import env from '@reappit/env/*';
 
 export default {
   schema: './src/schema.ts',

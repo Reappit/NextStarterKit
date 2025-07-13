@@ -57,10 +57,10 @@ importers:
         specifier: ^0.13.8
         version: 0.13.8(typescript@5.7.3)(zod@3.25.64)
     devDependencies:
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config-repo
       eslint-config-prettier:
@@ -84,13 +84,13 @@ importers:
 
   apps/web:
     dependencies:
-      '@workspace/actions':
+      '@reappit/actions':
         specifier: workspace:*
         version: link:../../packages/actions
-      '@workspace/next-blog':
+      '@reappit/next-blog':
         specifier: workspace:*
         version: link:../../packages/next-blog-repo
-      '@workspace/ui':
+      '@reappit/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       lucide-react:
@@ -118,10 +118,10 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config-repo
       typescript:
@@ -130,10 +130,10 @@ importers:
 
   packages/actions:
     dependencies:
-      '@workspace/common-repo':
+      '@reappit/common-repo':
         specifier: workspace:*
         version: link:../common-repo
-      '@workspace/services':
+      '@reappit/services':
         specifier: workspace:*
         version: link:../services
       zod:
@@ -152,10 +152,10 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       drizzle-kit:
@@ -195,10 +195,10 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       drizzle-kit:
@@ -219,10 +219,10 @@ importers:
       '@upstash/redis':
         specifier: ^1.35.0
         version: 1.35.0
-      '@workspace/db':
+      '@reappit/db':
         specifier: workspace:*
         version: link:../db
-      '@workspace/env':
+      '@reappit/env':
         specifier: workspace:*
         version: link:../env
       better-auth:
@@ -271,10 +271,10 @@ importers:
       '@types/uuid':
         specifier: ^10.0.0
         version: 10.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -286,10 +286,10 @@ importers:
       '@hookform/resolvers':
         specifier: 'catalog:'
         version: 5.0.1(react-hook-form@7.57.0(react@19.1.0))
-      '@workspace/common-db-repo':
+      '@reappit/common-db-repo':
         specifier: workspace:*
         version: link:../common-db-repo
-      '@workspace/env':
+      '@reappit/env':
         specifier: workspace:*
         version: link:../env
       drizzle-orm:
@@ -320,10 +320,10 @@ importers:
       '@types/uuid':
         specifier: 10.0.0
         version: 10.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       drizzle-kit:
@@ -335,7 +335,7 @@ importers:
 
   packages/dto:
     dependencies:
-      '@workspace/db':
+      '@reappit/db':
         specifier: workspace:*
         version: link:../db
       zod:
@@ -348,10 +348,10 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.15.21
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -373,10 +373,10 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.15.21
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -433,7 +433,7 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16
-      '@workspace/ui':
+      '@reappit/ui':
         specifier: workspace:*
         version: link:../ui
       lucide-react:
@@ -467,10 +467,10 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.0.0
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -479,13 +479,13 @@ importers:
 
   packages/repository:
     dependencies:
-      '@workspace/common-repo':
+      '@reappit/common-repo':
         specifier: workspace:*
         version: link:../common-repo
-      '@workspace/db':
+      '@reappit/db':
         specifier: workspace:*
         version: link:../db
-      '@workspace/env':
+      '@reappit/env':
         specifier: workspace:*
         version: link:../env
       drizzle-orm:
@@ -504,10 +504,10 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.15.21
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -516,16 +516,16 @@ importers:
 
   packages/services:
     dependencies:
-      '@workspace/common-repo':
+      '@reappit/common-repo':
         specifier: workspace:*
         version: link:../common-repo
-      '@workspace/dto':
+      '@reappit/dto':
         specifier: workspace:*
         version: link:../dto
-      '@workspace/env':
+      '@reappit/env':
         specifier: workspace:*
         version: link:../env
-      '@workspace/repository':
+      '@reappit/repository':
         specifier: workspace:*
         version: link:../repository
       zod:
@@ -538,10 +538,10 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.15.21
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       typescript:
@@ -616,10 +616,10 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.1.5(@types/react@19.1.4)
-      '@workspace/eslint-config':
+      '@reappit/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config-repo
-      '@workspace/typescript-config':
+      '@reappit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config-repo
       tailwindcss:

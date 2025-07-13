@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/env",
+  "name": "@reappit/env",
   "version": "1.0.0",
   "type": "module",
   "private": false,
@@ -17,8 +17,8 @@
   "devDependencies": {
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }
 }

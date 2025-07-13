@@ -1,5 +1,5 @@
-import { UserDto } from '@workspace/dto/*';
-import { userRepository } from '@workspace/repository/*';
+import { UserDto } from '@reappit/dto/*';
+import { userRepository } from '@reappit/repository/*';
 
 const userService = {
   async getUserByEmail(email: string) {

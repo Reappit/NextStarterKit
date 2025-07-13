@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/db",
+  "name": "@reappit/db",
   "version": "1.0.0",
   "type": "module",
   "private": false,
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "catalog:",
-    "@workspace/common-db-repo": "workspace:*",
-    "@workspace/env": "workspace:*",
+    "@reappit/common-db-repo": "workspace:*",
+    "@reappit/env": "workspace:*",
     "drizzle-orm": "0.44.2",
     "drizzle-zod": "0.8.2",
     "pg": "8.16.0",
@@ -29,8 +29,8 @@
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
     "@types/uuid": "10.0.0",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "drizzle-kit": "0.31.1",
     "typescript": "catalog:"
   }

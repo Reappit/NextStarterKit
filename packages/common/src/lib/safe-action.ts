@@ -3,7 +3,7 @@ import { Redis } from '@upstash/redis';
 import { createSafeActionClient } from 'next-safe-action';
 import { z } from 'zod';
 
-import env from '@workspace/env/*';
+import env from '@reappit/env/*';
 import { ActionError } from './exceptions';
 import { getIp } from './get-ip';
 import { assertAuthenticated } from './session';

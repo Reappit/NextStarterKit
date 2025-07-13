@@ -9,8 +9,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.4.0",
     "prettier": "catalog:",

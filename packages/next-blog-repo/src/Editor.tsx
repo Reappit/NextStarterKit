@@ -11,13 +11,13 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from '@workspace/ui/components/card';
+} from '@reappit/ui/components/card';
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@workspace/ui/components/tabs';
+} from '@reappit/ui/components/tabs';
 import {
   AlertCircle,
   BookOpen,
@@ -27,13 +27,13 @@ import {
   Save,
   Search,
 } from 'lucide-react';
-import { Button } from '@workspace/ui/components/button';
-import { Input } from '@workspace/ui/components/input';
+import { Button } from '@reappit/ui/components/button';
+import { Input } from '@reappit/ui/components/input';
 
-import { Badge } from '@workspace/ui/components/badge';
-import { Textarea } from '@workspace/ui/components/textarea';
-import { Separator } from '@workspace/ui/components/separator';
-import { Alert, AlertDescription } from '@workspace/ui/components/alert';
+import { Badge } from '@reappit/ui/components/badge';
+import { Textarea } from '@reappit/ui/components/textarea';
+import { Separator } from '@reappit/ui/components/separator';
+import { Alert, AlertDescription } from '@reappit/ui/components/alert';
 import { z } from 'zod';
 import {
   FormControl,
@@ -43,10 +43,10 @@ import {
   FormLabel,
   FormMessage,
   Form,
-} from '@workspace/ui/components/form';
+} from '@reappit/ui/components/form';
 import { CharacterCount } from './components/CharacterCount';
 import GoogleSearchPreview from './components/GoogleSearchPreview';
-import { Checkbox } from '@workspace/ui/components/checkbox';
+import { Checkbox } from '@reappit/ui/components/checkbox';
 
 // const EditorComp = dynamic(() => import('./InitializedMDXEditor'), {
 //   ssr: false,

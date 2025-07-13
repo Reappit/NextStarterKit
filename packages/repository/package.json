@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/repository",
+  "name": "@reappit/repository",
   "version": "1.0.0",
   "type": "module",
   "private": false,
@@ -11,9 +11,9 @@
     "./*": "./src/index.ts"
   },
   "dependencies": {
-    "@workspace/common-repo": "workspace:*",
-    "@workspace/env": "workspace:*",
-    "@workspace/db": "workspace:*",
+    "@reappit/common-repo": "workspace:*",
+    "@reappit/env": "workspace:*",
+    "@reappit/db": "workspace:*",
     "drizzle-orm": "0.44.2",
     "drizzle-zod": "0.8.2",
     "zod": "catalog:"
@@ -21,8 +21,8 @@
   "devDependencies": {
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }
 }

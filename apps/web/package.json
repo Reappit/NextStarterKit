@@ -12,9 +12,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@workspace/ui": "workspace:*",
-    "@workspace/next-blog": "workspace:*",
-    "@workspace/actions": "workspace:*",
+    "@reappit/ui": "workspace:*",
+    "@reappit/next-blog": "workspace:*",
+    "@reappit/actions": "workspace:*",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "next-themes": "0.4.4",
@@ -25,8 +25,8 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }
 }

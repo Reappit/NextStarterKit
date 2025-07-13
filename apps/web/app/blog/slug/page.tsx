@@ -1,4 +1,4 @@
-import { getSlugById } from '@workspace/actions/*';
+import { getSlugById } from '@reappit/actions/*';
 
 export default async function () {
   const slugs = await getSlugById();

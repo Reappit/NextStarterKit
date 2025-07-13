@@ -1,6 +1,6 @@
 import { type z } from 'zod';
 
-import { selectUserSchema } from '@workspace/db/*';
+import { selectUserSchema } from '@reappit/db/*';
 
 export const UserDto = selectUserSchema;
 

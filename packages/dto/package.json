@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/dto",
+  "name": "@reappit/dto",
   "version": "1.0.0",
   "type": "module",
   "private": false,
@@ -11,14 +11,14 @@
     "./*": "./src/index.ts"
   },
   "dependencies": {
-    "@workspace/db": "workspace:*",
+    "@reappit/db": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }
 }

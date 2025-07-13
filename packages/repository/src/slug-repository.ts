@@ -1,7 +1,7 @@
 import { desc, eq } from 'drizzle-orm';
 
-import { db, type insertSlugSchemaType } from '@workspace/db/*';
-import { slugTable } from '@workspace/db/*';
+import { db, type insertSlugSchemaType } from '@reappit/db/*';
+import { slugTable } from '@reappit/db/*';
 
 const slugRepository = {
   async getSlugs(allSlugs: boolean = false) {
