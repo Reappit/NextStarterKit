@@ -1,6 +1,6 @@
 'use server';
 
-import { unauthenticatedAction } from '@reappit/common/*';
+import { unauthenticatedAction } from '@reappit/common';
 import { slugService } from '@/src/services/slug-service';
 
 export const getSlugById = unauthenticatedAction

@@ -1,6 +1,7 @@
 packages:
   - 'apps/*'
   - 'packages/*'
+  - 'core/*'
 
 catalog:
   next: 15.3.3

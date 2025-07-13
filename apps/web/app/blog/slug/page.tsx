@@ -1,8 +1,7 @@
-import { getSlugById } from '@reappit/blog/*';
+import { slugService } from '@reappit/blog';
 
 export default async function () {
-  const slugs = await getSlugById();
-  console.log(slugs);
+  const slugs = await slugService.getSlugById('1');
   return (
     <div>
       <h1>Blog Post</h1>

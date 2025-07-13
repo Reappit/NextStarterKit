@@ -1,5 +1,5 @@
-import { SlugDto } from '@reappit/dto/*';
-import { slugRepository } from '@reappit/repository/*';
+import { SlugDto } from '@/src/dto/slug-dto';
+import { slugRepository } from '@/src/repository';
 
 const slugService = {
   async saveSlug(slug: SlugDto) {
