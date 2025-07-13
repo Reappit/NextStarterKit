@@ -8,16 +8,14 @@
     "./*": "./src/index.ts"
   },
   "dependencies": {
-    "@reappit/common-repo": "workspace:*",
+    "@reappit/common": "workspace:*",
     "@reappit/services": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@reappit/eslint-config": "workspace:*",
     "@reappit/typescript-config": "workspace:*",
     "drizzle-kit": "0.31.1",
     "typescript": "catalog:"

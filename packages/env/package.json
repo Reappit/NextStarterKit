@@ -15,9 +15,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
-    "@reappit/eslint-config": "workspace:*",
     "@reappit/typescript-config": "workspace:*",
     "typescript": "catalog:"
   }

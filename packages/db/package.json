@@ -26,10 +26,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@turbo/gen": "catalog:",
     "@types/node": "catalog:",
     "@types/uuid": "10.0.0",
-    "@reappit/eslint-config": "workspace:*",
     "@reappit/typescript-config": "workspace:*",
     "drizzle-kit": "0.31.1",
     "typescript": "catalog:"
