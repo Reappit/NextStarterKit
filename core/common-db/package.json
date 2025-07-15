@@ -5,11 +5,13 @@
   "private": false,
   "packageManager": "pnpm@10.4.1",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
   },
   "dependencies": {
     "drizzle-orm": "0.44.2",
     "drizzle-zod": "0.8.2",
+    "@reappit/env": "workspace:*",
     "pg": "8.16.0",
     "postgres": "3.4.7",
     "uuid": "11.1.0",

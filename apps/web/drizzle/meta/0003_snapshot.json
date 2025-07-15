@@ -1,0 +1,44 @@
+{
+  "id": "14a52392-035d-46e6-ac78-fbef8bffc84a",
+  "prevId": "eb66fb2f-1a29-49bd-9537-3c4b5f8cf2ed",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.test1": {
+      "name": "test1",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "test1": {
+          "name": "test1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

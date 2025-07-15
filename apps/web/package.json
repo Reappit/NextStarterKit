@@ -9,11 +9,18 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db-push": "drizzle-kit push --config=drizzle.config.ts",
+    "db-migrate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit migrate --config=drizzle.config.ts",
+    "db-generate": "SKIP_ENV_VALIDATION=TRUE drizzle-kit generate --config=drizzle.config.ts",
+    "db-studio": "SKIP_ENV_VALIDATION=TRUE drizzle-kit studio"
   },
   "dependencies": {
-    "@reappit/ui": "workspace:*",
     "@reappit/blog": "workspace:*",
+    "@reappit/common-db": "workspace:*",
+    "@reappit/env": "workspace:*",
+    "@reappit/ui": "workspace:*",
+    "drizzle-orm": "0.44.2",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "next-themes": "0.4.4",
@@ -21,11 +28,12 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
+    "@reappit/eslint-config": "workspace:*",
+    "@reappit/typescript-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@reappit/eslint-config": "workspace:*",
-    "@reappit/typescript-config": "workspace:*",
+    "drizzle-kit": "catalog:",
     "typescript": "catalog:"
   }
 }

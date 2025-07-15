@@ -8,7 +8,7 @@
     "lint": "eslint . --max-warnings 0"
   },
   "exports": {
-    "./*": "./src/index.ts"
+    ".": "./src/index.ts"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.8",

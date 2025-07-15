@@ -1,6 +1,6 @@
 import { type z } from 'zod';
 
-import { selectUserSchema } from '@reappit/db/*';
+import { selectUserSchema } from '@reappit/common-db';
 
 export const UserDto = selectUserSchema;
 
