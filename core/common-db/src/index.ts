@@ -13,17 +13,23 @@ import * as schema from './schema';
 
 export { schema };
 
-// Create a lazy database instance that only initializes when accessed
-let _db: ReturnType<typeof drizzle> | undefined;
+declare global {
+  // eslint-disable-next-line no-var
+  var db: PostgresJsDatabase | undefined;
+}
 
-export function getDb<T>(
-  additionalSchema: T
-): PostgresJsDatabase<typeof schema & T> {
-  if (!_db) {
-    const pg = postgres(env.DATABASE_URL);
-    _db = drizzle(pg, { schema: { ...schema, ...additionalSchema } });
+let db: PostgresJsDatabase;
+let pg: ReturnType<typeof postgres>;
+
+if (env.NODE_ENV === 'production') {
+  pg = postgres(env.DATABASE_URL);
+  db = drizzle(pg);
+} else {
+  if (!global.db) {
+    pg = postgres(env.DATABASE_URL);
+    global.db = drizzle(pg);
   }
-  return _db!;
+  db = global.db;
 }
 
 export type Transaction = PgTransaction<
@@ -31,3 +37,5 @@ export type Transaction = PgTransaction<
   typeof schema,
   ExtractTablesWithRelations<typeof schema>
 >;
+
+export { db, pg };
