@@ -3,8 +3,8 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { headers } from 'next/headers';
 import { cache } from 'react';
 
-import { db } from '@reappit/db/*';
-import env from '@reappit/env/*';
+import { db } from '@reappit/common-db';
+import env from '@reappit/env';
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {

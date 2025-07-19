@@ -1,7 +1,7 @@
 'use client';
 
 // import dynamic from 'next/dynamic';
-import '../node_modules/@mdxeditor/editor/dist/style.css';
+import '../../../node_modules/@mdxeditor/editor/dist/style.css';
 // import './editor.css';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -44,8 +44,8 @@ import {
   FormMessage,
   Form,
 } from '@reappit/ui/components/form';
-import { CharacterCount } from './components/CharacterCount';
-import GoogleSearchPreview from './components/GoogleSearchPreview';
+import { CharacterCount } from '../CharacterCount';
+import GoogleSearchPreview from '../GoogleSearchPreview';
 import { Checkbox } from '@reappit/ui/components/checkbox';
 
 // const EditorComp = dynamic(() => import('./InitializedMDXEditor'), {

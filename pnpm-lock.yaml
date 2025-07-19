@@ -46,8 +46,8 @@ catalogs:
       specifier: 2.5.4
       version: 2.5.4
     typescript:
-      specifier: 5.7.3
-      version: 5.7.3
+      specifier: 5.8.3
+      version: 5.8.3
     zod:
       specifier: 3.25.64
       version: 3.25.64
@@ -58,7 +58,7 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
-        version: 0.13.8(typescript@5.7.3)(zod@3.25.64)
+        version: 0.13.8(typescript@5.8.3)(zod@3.25.64)
     devDependencies:
       '@reappit/eslint-config':
         specifier: workspace:*
@@ -83,7 +83,7 @@ importers:
         version: 2.5.4
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
   apps/web:
     dependencies:
@@ -138,7 +138,7 @@ importers:
         version: 0.31.4
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
   core/blog:
     dependencies:
@@ -187,7 +187,7 @@ importers:
         version: link:../typescript-config
       '@turbo/gen':
         specifier: 'catalog:'
-        version: 2.5.3(@types/node@22.15.21)(typescript@5.7.3)
+        version: 2.5.3(@types/node@22.15.21)(typescript@5.8.3)
       '@types/node':
         specifier: 'catalog:'
         version: 22.15.21
@@ -199,7 +199,7 @@ importers:
         version: 19.0.0
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
   core/common:
     dependencies:
@@ -266,7 +266,7 @@ importers:
         version: 10.0.0
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
   core/common-db:
     dependencies:
@@ -341,7 +341,7 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
-        version: 0.13.8(typescript@5.7.3)(zod@3.25.64)
+        version: 0.13.8(typescript@5.8.3)(zod@3.25.64)
       zod:
         specifier: 'catalog:'
         version: 3.25.64
@@ -354,7 +354,7 @@ importers:
         version: 22.15.21
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
   packages/ui:
     dependencies:
@@ -418,7 +418,7 @@ importers:
         version: 4.1.7
       '@turbo/gen':
         specifier: ^2.4.2
-        version: 2.5.3(@types/node@20.17.47)(typescript@5.7.3)
+        version: 2.5.3(@types/node@20.17.47)(typescript@5.8.3)
       '@types/node':
         specifier: ^20
         version: 20.17.47
@@ -433,7 +433,7 @@ importers:
         version: 4.1.7
       typescript:
         specifier: 'catalog:'
-        version: 5.7.3
+        version: 5.8.3
 
 packages:
 
@@ -4381,11 +4381,6 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.9.0'
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
@@ -6175,16 +6170,16 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.8(typescript@5.7.3)(zod@3.25.64)':
+  '@t3-oss/env-core@0.13.8(typescript@5.8.3)(zod@3.25.64)':
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.3
       zod: 3.25.64
 
-  '@t3-oss/env-nextjs@0.13.8(typescript@5.7.3)(zod@3.25.64)':
+  '@t3-oss/env-nextjs@0.13.8(typescript@5.8.3)(zod@3.25.64)':
     dependencies:
-      '@t3-oss/env-core': 0.13.8(typescript@5.7.3)(zod@3.25.64)
+      '@t3-oss/env-core': 0.13.8(typescript@5.8.3)(zod@3.25.64)
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.3
       zod: 3.25.64
 
   '@tailwindcss/node@4.1.7':
@@ -6276,7 +6271,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.3(@types/node@20.17.47)(typescript@5.7.3)':
+  '@turbo/gen@2.5.3(@types/node@20.17.47)(typescript@5.8.3)':
     dependencies:
       '@turbo/workspaces': 2.5.3
       commander: 10.0.1
@@ -6286,7 +6281,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.5.0
-      ts-node: 10.9.2(@types/node@20.17.47)(typescript@5.7.3)
+      ts-node: 10.9.2(@types/node@20.17.47)(typescript@5.8.3)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -6296,7 +6291,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@turbo/gen@2.5.3(@types/node@22.15.21)(typescript@5.7.3)':
+  '@turbo/gen@2.5.3(@types/node@22.15.21)(typescript@5.8.3)':
     dependencies:
       '@turbo/workspaces': 2.5.3
       commander: 10.0.1
@@ -6306,7 +6301,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.5.0
-      ts-node: 10.9.2(@types/node@22.15.21)(typescript@5.7.3)
+      ts-node: 10.9.2(@types/node@22.15.21)(typescript@5.8.3)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -9166,7 +9161,7 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@20.17.47)(typescript@5.7.3):
+  ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -9180,11 +9175,11 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.7.3
+      typescript: 5.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.2(@types/node@22.15.21)(typescript@5.7.3):
+  ts-node@10.9.2(@types/node@22.15.21)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -9198,7 +9193,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.7.3
+      typescript: 5.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -9285,8 +9280,6 @@ snapshots:
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
-
-  typescript@5.7.3: {}
 
   typescript@5.8.3: {}
 

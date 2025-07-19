@@ -42,6 +42,8 @@ export const slugTable = pgTable('slug', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 }).enableRLS();
 
+// todo slug references tables
+
 export const categoryTable = pgTable('category', {
   id: serial('id').primaryKey(),
   name: text('name').notNull(),

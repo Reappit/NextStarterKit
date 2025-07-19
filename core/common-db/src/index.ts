@@ -1,4 +1,4 @@
-import { type ExtractTablesWithRelations } from 'drizzle-orm';
+import { type ExtractTablesWithRelations, desc, eq } from 'drizzle-orm';
 import { type PgTransaction } from 'drizzle-orm/pg-core';
 import {
   type PostgresJsDatabase,
@@ -15,10 +15,10 @@ export { schema };
 
 declare global {
   // eslint-disable-next-line no-var
-  var db: PostgresJsDatabase | undefined;
+  var db: PostgresJsDatabase<typeof schema> | undefined;
 }
 
-let db: PostgresJsDatabase;
+let db: PostgresJsDatabase<typeof schema>;
 let pg: ReturnType<typeof postgres>;
 
 if (env.NODE_ENV === 'production') {
@@ -27,7 +27,7 @@ if (env.NODE_ENV === 'production') {
 } else {
   if (!global.db) {
     pg = postgres(env.DATABASE_URL);
-    global.db = drizzle(pg);
+    global.db = drizzle(pg, { schema });
   }
   db = global.db;
 }
@@ -38,4 +38,4 @@ export type Transaction = PgTransaction<
   ExtractTablesWithRelations<typeof schema>
 >;
 
-export { db, pg };
+export { db, desc, eq };

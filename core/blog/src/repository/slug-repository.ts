@@ -1,7 +1,9 @@
-import { desc, eq } from 'drizzle-orm';
-
-import { db, type insertSlugSchemaType } from '@reappit/common-db';
-import { slugTable } from '@reappit/common-db';
+import { db, desc, eq } from '@reappit/common-db';
+import {
+  slugTable,
+  type insertSlugSchemaType,
+} from '@reappit/common-db/schema';
+import { SlugDto } from '../dto';
 
 const slugRepository = {
   async getSlugs(allSlugs: boolean = false) {
@@ -19,21 +21,17 @@ const slugRepository = {
     });
   },
 
-  getSlugById(id: string) {
+  getSlugById(id: number) {
     return db.query.slugTable.findFirst({
       where: eq(slugTable.id, id),
-      with: {
-        category: true,
-        author: true,
-      },
     });
   },
 
-  saveSlug(slug: insertSlugSchemaType) {
+  saveSlug(slug: SlugDto) {
     return db.insert(slugTable).values(slug);
   },
 
-  updatePost(slug: insertSlugSchemaType) {
+  updateSlug(slug: insertSlugSchemaType) {
     return db.update(slugTable).set(slug).where(eq(slugTable.id, slug.id!));
   },
 };

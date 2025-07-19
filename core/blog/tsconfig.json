@@ -2,10 +2,6 @@
   "extends": "@reappit/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@reappit/ui/*": ["../../packages/ui/src/*"]
-    },
     "plugins": [
       {
         "name": "next"

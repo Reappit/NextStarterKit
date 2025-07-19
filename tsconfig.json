@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "jsx": "react"
-  },
-  "extends": "@reappit/typescript-config/base.json"
-}

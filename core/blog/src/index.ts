@@ -1,6 +1,6 @@
-import InitializedMDXEditor from 'src/components/editor/InitializedMDXEditor';
+import InitializedMDXEditor from './components/editor/InitializedMDXEditor';
 
-import Editor from 'src/components/editor/Editor';
+import Editor from './components/editor/Editor';
 
 export * from './services';
 
