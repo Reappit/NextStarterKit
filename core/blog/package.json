@@ -9,12 +9,13 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./styles.css": "./node_modules/@mdxeditor/editor/dist/style.css"
+    "./styles.css": "./node_modules/@mdxeditor/editor/dist/style.css",
+    "./editor": "./src/components/index.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "catalog:",
-    "@mdxeditor/editor": "3.32.3",
-    "@tailwindcss/typography": "^0.5.16",
+    "@mdxeditor/editor": "3.40.0",
+    "@tailwindcss/typography": "0.5.16",
     "@reappit/ui": "workspace:*",
     "@reappit/common": "workspace:*",
     "@reappit/common-db": "workspace:*",

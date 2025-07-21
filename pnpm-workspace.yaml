@@ -4,7 +4,7 @@ packages:
   - 'core/*'
 
 catalog:
-  next: 15.3.3
+  next: 15.4.2
   lucide-react: 0.475.0
   tailwindcss: 4.1.8
   eslint: 8.57.0
@@ -16,8 +16,8 @@ catalog:
   'zod': 3.25.64
   '@types/react': 19.0.0
   '@types/react-dom': 19.0.0
-  '@turbo/gen': 2.5.3
-  turbo: 2.5.4
+  '@turbo/gen': 2.5.5
+  turbo: 2.5.5
   'react-hook-form': 7.57.0
   '@hookform/resolvers': 5.1.1
   'drizzle-kit': 0.31.4

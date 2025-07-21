@@ -31,7 +31,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "es5-ext"
+      "es5-ext",
+      "sharp"
     ]
   }
 }
