@@ -8,8 +8,8 @@ import {
 } from '@reappit/common-db/schema';
 
 export const SlugDto = selectSlugSchema.extend({
-  category: selectCategorySchema.optional(),
-  author: selectUserSchema.pick({ login: true }),
+  // category: selectCategorySchema.optional(),
+  // author: selectUserSchema.pick({ login: true }),
 });
 
 export const SlugInsertDto = insertSlugSchema;

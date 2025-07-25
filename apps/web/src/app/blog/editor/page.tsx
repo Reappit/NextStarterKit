@@ -1,12 +1,15 @@
-'use client';
-
 import { Editor } from '@reappit/blog/editor';
 import { Suspense } from 'react';
 
-export default function EditorPage() {
+export default async function EditorPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ id: string }>;
+}) {
+  const { id } = await searchParams;
   return (
     <Suspense>
-      <Editor />
+      <Editor slugId={id} />
     </Suspense>
   );
 }

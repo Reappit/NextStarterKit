@@ -8,8 +8,9 @@ const slugService = {
   getSlugs(allSlugs: boolean = false) {
     return slugRepository.getSlugs(allSlugs);
   },
-  getSlugById(id: number) {
-    return slugRepository.getSlugById(id);
+  async getSlugById(id: number): Promise<SlugDto> {
+    const slug = await slugRepository.getSlugById(id);
+    return SlugDto.parse(slug);
   },
 };
 
