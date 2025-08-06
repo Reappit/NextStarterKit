@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-ui-monorepo",
+  "name": "next-starter-kit",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,10 +11,10 @@
   "devDependencies": {
     "@reappit/eslint-config": "workspace:*",
     "@reappit/typescript-config": "workspace:*",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.4.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.3",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "0.6.11",
+    "prettier-plugin-tailwindcss": "0.6.14",
     "turbo": "catalog:",
     "typescript": "catalog:"
   },

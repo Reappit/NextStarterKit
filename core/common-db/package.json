@@ -9,15 +9,15 @@
     "./schema": "./src/schema.ts"
   },
   "dependencies": {
-    "drizzle-orm": "0.44.2",
+    "drizzle-orm": "0.44.4",
     "drizzle-zod": "0.8.2",
     "@reappit/env": "workspace:*",
-    "pg": "8.16.0",
+    "pg": "8.16.3",
     "postgres": "3.4.7",
     "uuid": "11.1.0",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "drizzle-kit": "0.31.1"
+    "drizzle-kit": "0.31.4"
   }
 }
